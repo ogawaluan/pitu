@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'react-bootstrap';
 
+import vars from '../../config/vars';
 import ShortenerService from '../../services/shortenerService';
 import Header from '../../components/Header';
 import { ContentContainer, Form, AdsBlock } from './styles';
@@ -75,7 +76,7 @@ class Home extends React.Component {
                     <InputGroup className="mb-3" >
                       <FormControl 
                         autoFocus={true}
-                        defaultValue={`https://pitu.tk/${code}`}
+                        defaultValue={vars.HOST_APP + code}
                         ref={(input) => this.inputURL = input}
                       />
 
@@ -83,7 +84,7 @@ class Home extends React.Component {
                         <Button variant="outline-secondary" onClick={() => this.copyToClipboard()} >Copy</Button>
                       </InputGroup.Append>
                     </InputGroup>
-                    <p>To follow the statistics, visit https://pitu.tk/{code}</p>
+                    <p>To follow the statistics, visit {vars.HOST_APP + code}/stats</p>
                   </>
                 )
               )}

@@ -2,6 +2,7 @@ import React from 'react';
 import { parseISO, formatRelative } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 
+import vars from '../../config/vars';
 import ShortenerService from '../../services/shortenerService';
 import { Container } from 'react-bootstrap';
 import Header from '../../components/Header';
@@ -57,7 +58,7 @@ class StatsPage extends React.Component {
           </StatsContainer>
         ) : (
           <StatsContainer className="text-center">
-            <p><b>https://pitu.tk/{shortenedURL.code}</b></p>
+            <p><b>{vars.HOST_APP + shortenedURL.code}</b></p>
             <p>Redirects to:<br/>{shortenedURL.url}</p>
             <StatsRow>
               <StatsBox>
